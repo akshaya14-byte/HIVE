@@ -39,7 +39,7 @@ export default function App() {
         <div style={styles.logo}>
           <div style={styles.logoIcon}>🛡</div>
           <div>
-            <div style={styles.logoTitle}>SENTINEL</div>
+            <div style={styles.logoTitle}>HIVE</div>
             <div style={styles.logoSub}>REAL-TIME SECURITY MONITOR</div>
           </div>
         </div>
