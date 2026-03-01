@@ -1,0 +1,37 @@
+:root {
+  --bg:       #050810;
+  --panel:    #0a0f1e;
+  --border:   #1a2540;
+  --accent:   #00f5c4;
+  --danger:   #ff3c5a;
+  --warn:     #ffaa00;
+  --text:     #c8d8f0;
+  --muted:    #4a5a7a;
+  --mono:     'Share Tech Mono', monospace;
+  --ui:       'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ui);
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,245,196,0.012) 2px, rgba(0,245,196,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }

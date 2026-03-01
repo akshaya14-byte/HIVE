@@ -1,0 +1,39 @@
+services:
+
+  # ── DDoS Traffic Scanner ──────────────────────────────────
+  traffic-scanner:
+    build:
+      context: ./scanners
+      dockerfile: Dockerfile
+    container_name: traffic-scanner
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./scanners:/app
+    command: uvicorn node_traffic_scanner:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+
+  # ── URL Phishing Scanner ──────────────────────────────────
+  url-scanner:
+    build:
+      context: ./scanners
+      dockerfile: Dockerfile
+    container_name: url-scanner
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./scanners:/app
+    command: uvicorn node_url_scanner:app --host 0.0.0.0 --port 8001
+    restart: unless-stopped
+
+  # ── React Dashboard ───────────────────────────────────────
+  dashboard:
+    build:
+      context: ./Dashboard
+      dockerfile: Dockerfile
+    container_name: dashboard
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Dashboard/src:/app/src
+    restart: unless-stopped

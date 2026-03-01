@@ -1,0 +1,5 @@
+# DDoS Auto-Blocklist
+# Format: IP | reason | risk_score | timestamp
+# Created: 2026-02-27 17:36:05 UTC
+
+45.33.32.156 | BENIGN | risk=0.50 | blocked_at=2026-02-27 17:36:05 UTC
